@@ -8,6 +8,8 @@ const {
     deleteBookmark,
     updateBookmark
 } = require("../queries/bookmarks");
+const reviewsController = require("./reviewsController.js");
+bookmarks.use("/:bookmarkId/reviews", reviewsController);
 
 // INDEX
 bookmarks.get("/", async (req, res) => {
